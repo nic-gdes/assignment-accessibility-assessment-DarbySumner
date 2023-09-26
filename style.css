@@ -7,7 +7,7 @@ html, body {
 
 html {
   font-size: 10px;
-  background-color: rgb(249, 237, 215);
+  background-color: rgb(255, 251, 243);
 }
 
 body {
@@ -54,7 +54,7 @@ table {
 /* || header layout */
 
 div[class="nav"], article, footer, .secondary {
-  background-color: rgb(108, 130, 91);
+  background-color: rgb(123, 200, 187);
 }
 
 article, footer, .secondary {
