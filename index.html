@@ -19,12 +19,14 @@
     </div>
 
     <div class="nav">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Our team</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Blog</a></li>
-      </ul>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Our team</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </nav> <!-- you want to wrap linklists that are meant for navigating around the website with a <nav> element -->
 
       <form>
         <label class="search-label" for="search"></label>
@@ -37,7 +39,7 @@
       <article>
         <h2>The trouble with Bears</h2>
        
-        <h3>By Evan Wild</h3>
+        <h3>By Evan Wild</h3> <!-- You wouldn't want to use an <h3> here, what you're implying semantically is that the following information until the next header element is associated with this content. We're just trying to point out who wrote the article. -->
         
         <p>Tall, lumbering, angry, dangerous. The real live bears of this world are proud, independent creatures, self-serving and always on the hunt for food. Nothing like the bears you see on TV, like Baloo from the renowned documentary, The Jungle Book.</p>
        
@@ -50,20 +52,21 @@
         <p>Bears can also be classified in terms of their habitat — both large and medium bears are just as at home in urban areas as they are in the countryside. Different habitats encourange different behaviour however, as you'll find out below. The below table also gives you some useful facts about bears.</p>
        
         <table>
+          <caption>Types of Bears</caption> <!-- you want to use a <caption> element to give screen readers a generalization of the table. -->
           <thead>
             <tr>
-              <th>Bear Type</th>
-              <th>Coat</th>
-              <th>Adult size</th>
-              <th>Habitat</th>
-              <th>Lifespan</th>
-              <th>Diet</th>
+              <th scope="col">Bear Type</th>
+              <th scope="col">Coat</th>
+              <th scope="col">Adult size</th>
+              <th scope="col">Habitat</th>
+              <th scope="col">Lifespan</th>
+              <th scope="col">Diet</th> <!-- we add a scope="col" to these headings to tell screen readers that they are meant as column headers -->
             </tr>
           </thead>
           
           <tbody>
             <tr>
-              <td>Wild</td>
+              <th scope="row">Wild</th> <!-- we would want these to be a <th> since they're a row header, and we add the row scope to tell screen readers that info. -->
               <td>Brown or black</td>
               <td>1.4 to 2.8 meters</td>
               <td>Woods and forests</td>
@@ -71,7 +74,7 @@
               <td>Fish, meat, plants</td>
             </tr>
             <tr>
-              <td>Urban</td>
+              <th scope="row">Urban</th> <!-- we would want these to be a <th> since they're a row header, and we add the row scope to tell screen readers that info. -->
               <td>North Face</td>
               <td>18 to 22</td>
               <td>Condos and coffee shops</td>
@@ -102,13 +105,14 @@
         <audio controls>
           <source src="media/bear.mp3" type="audio/mp3">
           <source src="media/bear.ogg" type="audio/ogg">
-          It looks like your browser doesn't support HTML5 audio players.
-          Here is a <a href="media/bear.mp3">link to the audio</a>
-          instead.
-
-          Transcription: "This isn't really an audio file about bears, but it is an audio file that you can transcribe."
+          <p>
+            It looks like your browser doesn't support HTML5 audio players.
+            Here is a <a href="media/bear.mp3">link to the audio</a>
+            instead.
+          </p> <!-- you'll want to wrap your multimedia fallback with an element as well, awesome job adding a download link for users to get the file if their browser can't run it! -->
         </audio>
 
+        <p>Transcription: "This isn't really an audio file about bears, but it is an audio file that you can transcribe."</p> <!-- transcription should go outside of the <audio> element, otherwise users who's browsers can play the audio won't see it. -->
         <aside>
 
           <h2>About the author</h2>
@@ -127,11 +131,11 @@
 
             <form class="comment-form">
               <div class="flex-pair">
-                Your name:
+                <label for="name">Your name:</label> <!-- we want these to be the semantic <label> element -->
                 <input type="text" name="name" id="name" placeholder="Enter your name">
               </div>
               <div class="flex-pair">
-                Your comment:
+                <label for="comment">Your comment:</label> <!-- we want these to be the semantic <label> element -->
                 <input type="text" name="comment" id="comment" placeholder="Enter your comment">
               </div>
               <div>
@@ -147,20 +151,23 @@
 
                 <p>Oh I am so glad you taught me all about the big brown angry guys in the woods. With their sniffing little noses and their bad attitudes, they can sure be a menace — I was thinking of putting them all in a truck and driving them outta here. I run a zoo, you know.</p>
               
-              </div>
+            </div>
+          </div> <!-- unclosed <div> -->
         </section>
       </article>
 
       <div class="secondary">
         <h2>Related</h2>
 
-        <ul>
-          <li><a href="#">The trouble with Bees</a></li>
-          <li><a href="#">The trouble with Otters</a></li>
-          <li><a href="#">The trouble with Penguins</a></li>
-          <li><a href="#">The trouble with Octopi</a></li>
-          <li><a href="#">The trouble with Lemurs</a></li>
-        </ul>
+        <nav>
+          <ul>
+            <li><a href="#">The trouble with Bees</a></li>
+            <li><a href="#">The trouble with Otters</a></li>
+            <li><a href="#">The trouble with Penguins</a></li>
+            <li><a href="#">The trouble with Octopi</a></li>
+            <li><a href="#">The trouble with Lemurs</a></li>
+          </ul>
+        </nav>
       </div>
     </main>
 
